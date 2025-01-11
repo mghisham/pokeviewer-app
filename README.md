@@ -25,15 +25,13 @@ A simple app to display Pokémon details using [PokéAPI](https://pokeapi.co/).
 ---
 
 ## **Architecture**  
-The app uses a **multi-module clean architecture**, segregated into the following modules:  
-1. **Data**: Handles API calls, repository implementation, and data sources.  
-2. **Domain**: Contains use cases and defines the core business logic.  
-3. **UI**: Manages user interface and composables.  
-
-Follows the **MVVM (Model-View-ViewModel)** pattern:  
-- **Model**: Handles API responses and data transformations.  
-- **ViewModel**: Manages app data and logic.  
-- **View**: Composables render the UI.  
+The app uses a **multi-module clean architecture** & **MVVM** with the following modules:
+1. **App**: The main application module.  
+2. **Core**: Contains shared utilities, constants, and reusable components used across other modules. 
+3. **Data**: Handles API calls, repository implementation, and data sources.  
+4. **Domain**: Contains use cases and defines the core business logic.  
+5. **Feature**: A directory of all the UI feature modules. Currently, it includes:
+   - **Pokeviewer**: Manages the Pokémon listing and details ui.
 
 ---
 
