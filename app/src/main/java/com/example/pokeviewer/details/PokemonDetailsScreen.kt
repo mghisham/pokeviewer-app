@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,18 +41,20 @@ fun PokemonDetailsScreen(uiState: PokemonDetailsUiState, onBack: () -> Unit) {
             AsyncImage(
                 contentScale = ContentScale.FillHeight,
                 model = uiState.pokemonDetails.imageUrl,
-                contentDescription = uiState.pokemonDetails.name,
+                contentDescription = "${uiState.pokemonDetails.name} Image",
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(400.dp)
                     .padding(16.dp)
+                    .testTag("pokemonImage")
             )
             Text(
                 uiState.pokemonDetails.name,
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(color = MaterialTheme.colorScheme.primary)
-                    .padding(24.dp),
+                    .padding(24.dp)
+                    .testTag("pokemonName"),
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.titleLarge,
                 color = MaterialTheme.colorScheme.onPrimary
@@ -61,7 +64,8 @@ fun PokemonDetailsScreen(uiState: PokemonDetailsUiState, onBack: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(color = MaterialTheme.colorScheme.primaryContainer)
-                    .padding(16.dp),
+                    .padding(16.dp)
+                    .testTag("pokemonHeight"),
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
                 color = MaterialTheme.colorScheme.onPrimaryContainer
