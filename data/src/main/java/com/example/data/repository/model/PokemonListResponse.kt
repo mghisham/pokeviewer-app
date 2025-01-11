@@ -15,5 +15,5 @@ data class PokemonItem(
 )
 
 fun PokemonListResponse.toPokemonList(): List<Pokemon> = results.map {
-    Pokemon(name = it.name, id = it.url)
+    Pokemon(name = it.name, url = it.url)
 }

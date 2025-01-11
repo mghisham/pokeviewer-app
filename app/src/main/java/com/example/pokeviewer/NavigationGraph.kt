@@ -22,7 +22,7 @@ fun NavigationGraph() {
             PokemonListScreen(
                 state = uiState.value
             ) {
-                navController.navigate(DetailsScreenRoute(it.name, it.id))
+                navController.navigate(DetailsScreenRoute(it.name, it.url))
             }
         }
         composable<DetailsScreenRoute> {
@@ -39,4 +39,4 @@ fun NavigationGraph() {
 data object ListScreenRoute
 
 @Serializable
-data class DetailsScreenRoute(val name: String, val id: String)
+data class DetailsScreenRoute(val name: String, val url: String)
