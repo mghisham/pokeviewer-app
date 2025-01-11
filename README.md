@@ -1,5 +1,6 @@
-# **PokeDex App**  
+# **PokeViewer App**  
 A simple app to display Pokémon details using [PokéAPI](https://pokeapi.co/).  
+
 
 ---
 
@@ -46,6 +47,15 @@ Follows the **MVVM (Model-View-ViewModel)** pattern:
 
 ### **UI Testing**  
 - **Espresso** tests are written for UI screen rendering.  
+
+---
+## **Screenshots**
+
+|# |List Loading|List Loaded|Details Screen|
+|---|---|---|---|
+|![image](https://github.com/user-attachments/assets/811329d5-109a-4475-aa06-041f3346a906)|![image](https://github.com/user-attachments/assets/16e0d977-69d3-4cfc-9f2f-fd74c79d6f5c)|![image](https://github.com/user-attachments/assets/657b5ead-39b3-4e83-b505-125f5a55216b)|![image](https://github.com/user-attachments/assets/b5777284-047a-4ef7-aa19-d6f54f92c3ac)|
+|![image](https://github.com/user-attachments/assets/6a7f6e46-3cc2-4908-a451-c64f2e2d91be)|![image](https://github.com/user-attachments/assets/452a7a8c-8f3c-4260-82bf-62d14eb8837f)|![image](https://github.com/user-attachments/assets/f228e0f6-1d45-4911-8a9d-a594d2db7eff)|![image](https://github.com/user-attachments/assets/efc9159d-65d4-4ec7-8035-6c98ba78219f)|
+
 
 ---
 
