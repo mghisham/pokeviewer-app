@@ -1,15 +1,19 @@
 package com.example.pokeviewer.common
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -28,6 +32,8 @@ import com.example.pokeviewer.R
 fun StateAwareContent(
     modifier: Modifier = Modifier,
     title: String? = null,
+    isBackEnabled: Boolean = false,
+    onBack: () -> Unit = {},
     screenState: ScreenState,
     content: @Composable () -> Unit
 ) {
@@ -39,6 +45,17 @@ fun StateAwareContent(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary
                 ),
+                navigationIcon = {
+                    if (isBackEnabled) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = "Back",
+                            modifier = Modifier.clickable {
+                                onBack()
+                            }
+                        )
+                    }
+                },
                 title = {
                     Text(title ?: stringResource(R.string.app_name))
                 }
@@ -96,7 +113,7 @@ fun StateAwareContentPreview_Error() {
 @Preview(showBackground = true)
 @Composable
 fun StateAwareContentPreview_Loading() {
-    StateAwareContent(screenState = ScreenState.Loading) {
+    StateAwareContent(screenState = ScreenState.Loading, isBackEnabled = true) {
         Text(text = "Content")
     }
 }

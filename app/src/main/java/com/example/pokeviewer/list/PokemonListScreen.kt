@@ -26,25 +26,29 @@ import com.example.domain.model.Pokemon
 import com.example.pokeviewer.common.StateAwareContent
 
 @Composable
-fun PokemonListScreen(state: PokemonListUiState) {
+fun PokemonListScreen(state: PokemonListUiState, onItemClicked: (Pokemon) -> Unit = {}) {
     StateAwareContent(
         screenState = state.screenState
     ) {
-        PokemonList(items = state.pokemonList)
+        PokemonList(items = state.pokemonList, onItemClicked)
     }
 }
 
 @Composable
-private fun PokemonList(items: List<Pokemon>) {
+private fun PokemonList(items: List<Pokemon>, onItemClicked: (Pokemon) -> Unit) {
     LazyColumn {
         items(items) { item ->
-            PokemonItem(pokemon = item)
+            PokemonItem(pokemon = item, onItemClicked = onItemClicked)
         }
     }
 }
 
 @Composable
-private fun PokemonItem(modifier: Modifier = Modifier, pokemon: Pokemon) {
+private fun PokemonItem(
+    modifier: Modifier = Modifier,
+    pokemon: Pokemon,
+    onItemClicked: (Pokemon) -> Unit
+) {
     ElevatedCard(
         elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
         colors = CardDefaults.cardColors(
@@ -55,7 +59,7 @@ private fun PokemonItem(modifier: Modifier = Modifier, pokemon: Pokemon) {
             .wrapContentHeight()
             .padding(8.dp)
             .clickable {
-
+                onItemClicked(pokemon)
             }
     ) {
         Row {
