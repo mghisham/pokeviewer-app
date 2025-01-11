@@ -6,10 +6,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.pokeviewer.details.PokemonDetailsScreen
-import com.example.pokeviewer.details.PokemonDetailsViewModel
-import com.example.pokeviewer.list.PokemonListScreen
-import com.example.pokeviewer.list.PokemonListViewModel
+import com.example.pokeview.details.PokemonDetailsScreen
+import com.example.pokeview.details.PokemonDetailsViewModel
+import com.example.pokeview.list.PokemonListScreen
+import com.example.pokeview.list.PokemonListViewModel
 import kotlinx.serialization.Serializable
 
 @Composable

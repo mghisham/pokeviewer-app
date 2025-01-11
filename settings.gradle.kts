@@ -21,5 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Poke Viewer"
 include(":app")
+include(":core")
 include(":domain")
 include(":data")
+include(":feature:pokeviewer")

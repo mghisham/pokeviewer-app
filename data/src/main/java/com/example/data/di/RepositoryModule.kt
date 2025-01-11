@@ -9,9 +9,9 @@ import dagger.hilt.android.components.ViewModelComponent
 
 @Module
 @InstallIn(ViewModelComponent::class)
-internal abstract class RepositoryModule {
+internal interface RepositoryModule {
     @Binds
-    abstract fun bindPokemonRepository(
+    fun bindPokemonRepository(
         repository: PokemonRepositoryImpl
     ): PokemonRepository
 }

@@ -1,6 +1,5 @@
 package com.example.domain.usecase
 
-import com.example.domain.common.empty
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -22,7 +21,7 @@ class GetPokemonIdFromUrlUseCaseTest {
     @Test
     fun `should return empty when getPokemonIdFromUrlUseCase fail`() {
         val url = ""
-        val expectedId = String.empty
+        val expectedId = ""
 
         val actualId = getPokemonIdFromUrlUseCase.invoke(url)
 
