@@ -4,9 +4,14 @@ import javax.inject.Inject
 
 class GetPokemonIdFromUrlUseCase @Inject constructor() {
     operator fun invoke(url: String): String {
-        url.split("/").let {
-            val pokemonId = it[it.size - 2]
-            return pokemonId
+        url.split(DELIMITER).let {
+            val idIndex = it.size - 2
+            val pokemonId = it.getOrNull(idIndex)
+            return pokemonId.orEmpty()
         }
+    }
+
+    private companion object {
+        const val DELIMITER = "/"
     }
 }
